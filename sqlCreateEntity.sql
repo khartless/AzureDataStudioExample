@@ -35,7 +35,7 @@ SET @startdate = '1/1/16'
     Group by FarmNo, EntityNo
 )
 
-select 
+select top 10
 a.ComplexEntityNo
 ,CASE WHEN a.StartDate < coalesce(b.StartDate, '11/30/3000') then a.StartDate else b.StartDate END AS StartDate
 ,CASE WHEN a.EndDate > coalesce(b.EndDate, '11/30/1899') THEN a.EndDate else b.EndDate END AS EndDate
